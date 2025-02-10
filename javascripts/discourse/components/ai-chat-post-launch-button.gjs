@@ -23,7 +23,15 @@ export default class AiChatPostLaunchButton extends Component {
 
   async fetchRawPost(postId) {
     try {
-      const { raw } = await ajax(`/posts/${postId}.json`);
+      let raw;
+      const topicId = this.args.post.topic_id;
+      if (settings.ai_chat_post_launch_whole_topic) {
+        raw = await ajax(`/raw/${topicId}`, { dataType: "html" });
+      } else {
+        const response = await ajax(`/posts/${postId}.json`);
+        raw = response.raw;
+      }
+
       return raw;
     } catch (error) {
       popupAjaxError(error);

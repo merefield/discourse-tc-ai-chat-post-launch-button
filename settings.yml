@@ -2,6 +2,10 @@ ai_chat_post_launch_enabled_for_anon:
   default: false
   description:
     en: "Enable for anonymous users"
+ai_chat_post_launch_whole_topic:
+  default: false
+  description:
+    en: "Enable retrieve for whole topic"
 ai_chat_post_launch_service_base_url:
   default: "https://chatgpt.com/?q="
   type: enum
