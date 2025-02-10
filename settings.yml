@@ -1,0 +1,16 @@
+ai_chat_post_launch_enabled_for_anon:
+  default: false
+  description:
+    en: "Enable for anonymous users"
+ai_chat_post_launch_service_base_url:
+  default: "https://chatgpt.com/?q="
+  type: enum
+  choices:
+    - "https://chatgpt.com/?q="
+    - "https://claude.ai/new?q="
+  description:
+    en: "The base URL and query string parameter to use for the chat link"
+ai_chat_post_launch_icons:
+  default: 'robot'
+  description:
+    en: "The icon you wish to use for the launch in chat"
