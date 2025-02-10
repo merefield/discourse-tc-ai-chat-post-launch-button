@@ -11,14 +11,9 @@ export default {
     }
 
     withPluginApi("1.34.0", (api) => {
-      api.registerValueTransformer(
-        "post-menu-buttons",
-        ({
-          value: dag
-        }) => {
-          dag.add("ai-chat-post-launch-button", AiChatPostLaunchButton);
-        }
-      );
+      api.registerValueTransformer("post-menu-buttons", ({ value: dag }) => {
+        dag.add("ai-chat-post-launch-button", AiChatPostLaunchButton);
+      });
     });
   },
 };
