@@ -6,7 +6,6 @@ import { popupAjaxError } from "discourse/lib/ajax-error";
 import { i18n } from "discourse-i18n";
 
 export default class AiChatPostLaunchButton extends Component {
-
   @action
   async launchChat() {
     const postContents = await this.fetchRawPost(this.args.post.id);
@@ -15,7 +14,9 @@ export default class AiChatPostLaunchButton extends Component {
       return;
     }
 
-    const URL = `${settings.ai_chat_post_launch_service_base_url}${encodeURIComponent(postContents)}`;
+    const URL = `${
+      settings.ai_chat_post_launch_service_base_url
+    }${encodeURIComponent(postContents)}`;
 
     window.open(URL, "_blank");
   }

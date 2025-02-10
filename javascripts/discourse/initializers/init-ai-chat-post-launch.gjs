@@ -5,11 +5,8 @@ export default {
   name: "ai-chat-post-launch-button",
 
   initialize(container) {
-    let siteSettings = container.lookup("service:site-settings");
     let currentUser = container.lookup("service:currentUser");
-    if (
-      !settings.open_post_in_llm_chat_enabled_for_anon && !currentUser
-    ) {
+    if (!settings.open_post_in_llm_chat_enabled_for_anon && !currentUser) {
       return;
     }
 
@@ -17,10 +14,7 @@ export default {
       api.registerValueTransformer(
         "post-menu-buttons",
         ({
-          value: dag,
-          context: {
-            secondLastHiddenButtonKey, // key of the second last hidden button
-          },
+          value: dag
         }) => {
           dag.add("ai-chat-post-launch-button", AiChatPostLaunchButton);
         }
